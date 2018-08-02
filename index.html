@@ -28,9 +28,9 @@
 			var yScale = d3.scaleLinear()
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([h - padding, padding]);
-			var rScale = d3.scaleLinear()
+			var aScale = d3.scaleSqrt()
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
-								 .range([2, 5]);
+								 .range([0, 10]);
 	
 			//Create SVG element
 			var svg = d3.select("body")
@@ -49,7 +49,7 @@
 			   		return yScale(d[1]);
 			   })
 			   .attr("r", function(d) {
-			   		return rScale(d[1]);
+			   		return aScale(d[1]);
 			   });
 			//Create labels
 			svg.selectAll("text")
