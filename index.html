@@ -45,7 +45,7 @@
 			var aScale = d3.scaleSqrt()
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([0, 10]);
-			var formatAsPercentage = d3.format(".1%");
+			var formatAsPercentage = d3.format("%");
 			//Define X axis
 			var xAxis = d3.axisBottom()
 							  .scale(xScale)
